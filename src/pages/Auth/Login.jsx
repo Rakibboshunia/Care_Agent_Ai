@@ -1,0 +1,92 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
+import logo from "../../../public/logo.png"
+
+export default function Login() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-background-main flex flex-col">
+      {/* TOP ORANGE BAR */}
+      <div className="h-20 bg-[#E7772E]" />
+
+      {/* LOGIN CARD */}
+      <div className="flex flex-1 items-center justify-center px-4">
+        <div className="w-full max-w-lg bg-white rounded-3xl shadow-lg p-18">
+          {/* LOGO */}
+          <div className="flex flex-col items-center mb-6">
+            <img src={logo} alt="" />
+          </div>
+
+          {/* TITLE */}
+          <h2 className="text-center text-[#E7772E] text-2xl font-semibold mb-1 pb-2">
+            Login to Account
+          </h2>
+          <p className="text-center text-sm text-gray-500 mb-6">
+            Please enter your email and password to continue
+          </p>
+
+          {/* FORM */}
+          <form className="space-y-4">
+            {/* EMAIL */}
+            <div>
+              <label className="text-sm text-gray-600 block mb-1">
+                Email address
+              </label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full border border-[#E7772E] rounded-md px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#E7772E]"
+              />
+            </div>
+
+            {/* PASSWORD */}
+            <div>
+              <label className="text-sm text-gray-600 block mb-1">
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter your password"
+                  className="w-full border border-[#E7772E] rounded-md px-3 py-3 text-sm pr-10 focus:outline-none focus:ring-1 focus:ring-[#E7772E]"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+            </div>
+
+            {/* OPTIONS */}
+            <div className="flex items-center justify-between text-sm">
+              <label className="flex items-center gap-2 text-gray-600">
+                <input type="checkbox" className="accent-[#E7772E]" />
+                Remember Password
+              </label>
+
+              <Link
+                to="/forgot-password"
+                className="text-gray-500 underline hover:text-[#E7772E]"
+              >
+                Forget Password?
+              </Link>
+            </div>
+
+            {/* BUTTON */}
+            <button
+              type="submit"
+              className="w-full bg-[#E7772E] text-white py-3 rounded-md font-medium hover:opacity-90 transition cursor-pointer"
+            >
+              Sign in
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
