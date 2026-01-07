@@ -4,13 +4,11 @@ export default function VerifyOTP() {
 
   return (
     <div className="min-h-screen bg-background-main flex flex-col">
-      {/* TOP ORANGE BAR */}
       <div className="h-20 bg-[#E7772E]" />
-
+      
       {/* LOGIN CARD */}
       <div className="flex flex-1 items-center justify-center px-4">
         <div className="w-full max-w-lg bg-white rounded-3xl shadow-lg p-20">
-          {/* LOGO */}
           <div className="flex flex-col items-center mb-6">
             <img src={logo} alt="" />
           </div>
@@ -26,7 +24,7 @@ export default function VerifyOTP() {
 
           {/* FORM */}
           <form className="space-y-6">
-            {/* EMAIL */}
+
             <div className="flex justify-center gap-4 pb-5">
               {[0, 1, 2, 3, 4].map((_, index) => (
                 <input
@@ -38,7 +36,6 @@ export default function VerifyOTP() {
               ))}
             </div>
 
-            {/* BUTTON */}
             <button
               type="submit"
               className="w-full bg-[#E7772E] text-white py-3 rounded-md font-medium hover:opacity-90 transition cursor-pointer"

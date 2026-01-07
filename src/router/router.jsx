@@ -2,11 +2,18 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../layout/DashboardLayout";
 import Home from "../pages/Home";
 
-import Login from "../pages/auth/Login";
-import ForgotPassword from "../pages/auth/ForgotPassword";
-import VerifyOTP from "../pages/auth/VerifyOTP";
-import NewPassword from "../pages/auth/NewPassword";
-import PasswordChanged from "../pages/auth/PasswordChanged";
+import Login from "../pages/Auth/Login";
+import ForgotPassword from "../pages/Auth/ForgotPassword";
+import VerifyOTP from "../pages/Auth/VerifyOTP";
+import NewPassword from "../pages/Auth/NewPassword";
+import PasswordChanged from "../pages/Auth/PasswordChanged";
+
+import Users from "../pages/Users";
+import Medicines from "../pages/Medicines";
+import Doctors from "../pages/Doctors";
+import Pharmacies from "../pages/Pharmacies";
+import RefillRequest from "../pages/RefillRequest";
+import { Settings } from "lucide-react";
 
 const router = createBrowserRouter([
 
@@ -42,27 +49,27 @@ const router = createBrowserRouter([
       },
       {
         path: "users",
-        element: <Home />,
+        element: <Users/>,
       },
       {
         path: "medicines",
-        element: <Home />,
+        element: <Medicines/>,
       },
       {
         path: "doctors",
-        element: <Home />,
+        element: <Doctors />,
       },
       {
         path: "pharmacies",
-        element: <Home />,
+        element: <Pharmacies />,
       },
       {
         path: "refill-requests",
-        element: <Home />,
+        element: <RefillRequest />,
       },
       {
         path: "settings",
-        element: <Home />,
+        element: <Settings />,
       },
     ],
   },
